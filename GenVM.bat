@@ -53,21 +53,21 @@ goto getError_code_0
 cls
 echo Errorlevel: %errorlevel%
 echo.
-echo GenVM_3.bat {[-D] [-L] [-S] [-D] [-A]} {Machine Name}
+echo GenVM.bat {[-D] [-L] [-S] [-D] [-A]} {Nom de la machine}
 echo.
-echo -D To start a specific virtual machine [require a second argument]
-echo -A To stop a specific virtual machine [require a second argument]
-echo -S To delete a specific virtual machine [require a second argument]
-echo -N To create a specific virtual machine [require a second argument]
-echo -L To give informations on overall virtual machine and/or a single virtual machine [may require a second argument]
+echo -D Pour demarrer un machine virtuelle [a besoin d'un second argument]
+echo -A Pour arreter une machine virtuelle [a besoin d'un second argument]
+echo -S Pour supprimer une machine virtuelle [a besoin d'un second argument]
+echo -N Pour créer  une machine virtuelle [a besoin d'un second argument]
+echo -L Pour donner des informations sur une ou des machines virtuelles [peu avoir besoin d'un second argument]
 exit /b 2
 
 
 :getError_code_2
 cls
 echo Errorlevel: %errorlevel%
-echo No second argument
-echo Example : GenVM_3.bat %1% ExampleName
+echo Pas de second argument
+echo Example : GenVM.bat %1% ExampleName
 exit /b 3
 
 
@@ -75,9 +75,8 @@ exit /b 3
 echo Errorlevel: %errorlevel%
 exit /b 1
 
-
 :getChecked
-echo ==================Checking process==================
+echo =================Vérification==================
 %path% list vms > "C:\Users\admin\VirtualBox VMs\list.txt"
 %sys%\find "%MachineName%" "C:\Users\admin\VirtualBox VMs\list.txt" && (
 echo "VM was found."
@@ -90,18 +89,16 @@ call :getCreate
 )
 exit /b 0
 
-
 :getDelete
-echo ==================Deleting process==================  
-echo Deleting VM %MachineName%...
+echo ==================Suppression de VM==================  
+echo Suppression de la machine %MachineName%...
 %path% unregistervm "%MachineName%" --delete
 del "C:\Users\admin\.VirtualBox\TFTP\%MachineName%.pxe"
 exit /b 0
 
-
 :getList
 cls
-echo ==================Liste==================  
+echo ==================Liste des machines==================  
 %path% list vms
 if not "%2"=="" (
 echo Info for %MachineName%
@@ -109,9 +106,8 @@ echo Info for %MachineName%
 )
 exit /b 0
 
-
 :getCreate
-echo ==================Creating process================== 
+echo ==================Creation de VM================== 
 %path% createvm --name %MachineName% --register
 echo Registering OS Type...
 %path% modifyvm %MachineName% --ostype Ubuntu_64
@@ -133,15 +129,13 @@ echo Setting extra data
 echo %MachineName% has been succesfully created.
 exit /b 0
 
-
 :getStart
 echo Starting %MachineName%
 %path% startvm %MachineName%
 exit /b 0
 
-
 :getStop
-echo Stoping %MachineName%
+echo Arret %MachineName%
 %path% controlvm %MachineName% poweroff
 echo %MachineName% has been succesfully stopped.
 exit /b 0
