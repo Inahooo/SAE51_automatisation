@@ -61,6 +61,7 @@ Si l'option -L est fournie, il va vers l'action de listing.
 Si le deuxième argument est manquant et que l'action requiert un nom, ça va renvoyer une erreur avec getError_code_2.
 
 **3. Gestion des différentes options**
+
 Voir la partie mode d'emploi plus haut dans ce readme
 
 **4. Gestion des erreurs**
