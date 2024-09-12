@@ -32,7 +32,7 @@ Pour cette SAE nous devions créer un script qui afin de mieux gerer la créatio
 
 
 ### Mode d'emploi : 
-#### GenVM_3.bat {[-D] [-L] [-S] [-D] [-A]} {Nom de la Machine}
+#### GenVM.bat {[-D] [-L] [-S] [-D] [-A]} {Nom de la Machine}
 * *-D* pour démarrer une machine
 * *-A* pour arreter une machine
 * *-S* pour supprimer une machine
