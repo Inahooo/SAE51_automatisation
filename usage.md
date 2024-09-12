@@ -1,5 +1,5 @@
 
-##### Kermarrec Gaëtan / Djenadi Arno / Groupe : :B:
+##### Kermarrec Gaëtan / Djenadi Arno / Groupe : FA3B
 ## Script d'automatisation de la création de VM virtual box
 Vous êtes employé dans la DSI d’une entreprise type PME. Cette société renouvelle son infra-structure IT, et le chef de service vous demande d’automatiser la création d’une maquette de la future infra, via un script de pilotage.
 
