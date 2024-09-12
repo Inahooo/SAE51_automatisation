@@ -23,6 +23,13 @@ Pour cette SAE nous devions créer un script qui afin de mieux gerer la créatio
 3. Script Batch ou Shell
 4. Gestion des erreurs
 5. Boot PXE
+9. Fichier d'explication .md
+
+### Et essayer :
+6. Boot automatique en Guest-Only
+7. Installation automatique de l'OS
+8. Avoir une arborescence de versions
+
 
 ### Mode d'emploi : 
 #### GenVM_3.bat {[-D] [-L] [-S] [-D] [-A]} {Nom de la Machine}
